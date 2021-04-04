@@ -26,6 +26,14 @@ int main(int argc, const char * argv[]) {
         MyTestClass* obj3 = [MyTestClass new];
         [obj3 setMessage:@"This is Third Object!!"];
         [obj3 printMessage];
+
+        // コンビニエンスコンストラクタを使用したインスタンス生成
+        // id型　あらゆるクラスのポインタ型　インスタンスを補完する汎用的な型　動的結合　ランタイムエラーの危険
+        id obj4 = [MyTestClass myTestClassWithMessage:@"This is 4th Object!!"];
+        [obj4 printMessage];
+
+        SubMyTestClass* obj5 = [SubMyTestClass subMyTestClassWithMessage:@"This is 5th Object!!" andMessage2:@"This is SubClass!!!"];
+        [obj5 printMessage];
     }
     return 0;
 }

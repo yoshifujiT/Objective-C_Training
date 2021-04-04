@@ -14,11 +14,26 @@ NS_ASSUME_NONNULL_BEGIN
     NSString* message;
 }
 
+// クラスメソッド
+// コンビニエンスコンストラクタ
++ (MyTestClass*)myTestClassWithMessage: (NSString*) str;
+
 // インスタンスメソッド
 // (<<returnType>>)<<methodName>>: (<<argType>>) argName;
--(void)setMessage: (NSString*) str;
--(NSString*)getMessage;
--(void)printMessage;
+- (void)setMessage: (NSString*) str;
+- (NSString*)getMessage;
+- (void)printMessage;
+
+@end
+
+@interface SubMyTestClass : MyTestClass {
+    NSString* message2;
+}
+
++ (SubMyTestClass*)subMyTestClassWithMessage: (NSString*) str1 andMessage2: (NSString*) str2;
+
+- (NSString*)getMessage2;
+- (void)setMessage2: (NSString*) str;
 
 @end
 
