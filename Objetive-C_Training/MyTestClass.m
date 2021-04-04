@@ -9,6 +9,9 @@
 
 @implementation MyTestClass
 
+// property で指定したインスタンス変数にアクセスするためのメソッドが自動生成される
+@synthesize myMsg;
+
 + (MyTestClass*)myTestClassWithMessage:(NSString *)str {
     MyTestClass* obj = [self new];
     [obj setMessage:str];

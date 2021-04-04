@@ -16,7 +16,10 @@ int main(int argc, const char * argv[]) {
         obj1 = [obj1 init];
         [obj1 setMessage:@"This is First Object!!"];
         [obj1 printMessage];
-
+        obj1->publicMessage = @"public message!!";
+        [obj1 setMyMsg:@"set my message!!"];
+        NSLog(@"%@", [obj1 myMsg]);
+        
         // alloc & init をまとめて書く
         MyTestClass* obj2 = [[MyTestClass alloc] init];
         [obj2 setMessage:@"This is Second Object!!"];
